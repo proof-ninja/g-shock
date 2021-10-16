@@ -1,3 +1,23 @@
-<html>
-hogehoge
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Index List</title>
+    <script>
+      var request = new XMLHttpRequest();
+   
+      request.open('GET', 'https://datahub.io/core/finance-vix/datapackage.json', true);
+      request.responseType = 'json';
+   
+      request.onload = function () {
+        var data = this.response;
+        console.log(data);
+      };
+   
+      request.send();
+    </script>
+  </head>
+  <body>
+    <h1>Index List</h1>
+  </body>
 </html>
