@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index List</title>
-    <script>
-      var request = new XMLHttpRequest();
-   
-      request.open('GET', 'https://datahub.io/core/finance-vix/datapackage.json', true);
-      request.responseType = 'json';
-   
-      request.onload = function () {
-        var data = this.response;
-        console.log(data);
-      };
-   
-      request.send();
-    </script>
-  </head>
-  <body>
-    <h1>Index List</h1>
-  </body>
+</head>
+
+<body>
+  <h1>Index List</h1>
+</body>
+<script>
+//GASのAPIのURL（各自変更してください。）
+const endpoint =
+"https://script.google.com/macros/s/AKfycbxzldA3tsLwXsAKuZE7K7cypitVRP3j1-_quoNtw_7pkqkEy1dHRd7o3x8WiT0b3FLguQ/exec";        
+//APIを使って非同期データを取得する
+fetch(endpoint)
+.then(response => response.json())
+/*成功した処理*/
+.then(data => {
+  //JSONから配列に変換
+  const object = data;
+  console.log(object);
+})
+</script>
+
 </html>
