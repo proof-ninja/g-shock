@@ -13,7 +13,7 @@ const data = {
     label: 'VIX Chart',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
-    data: [0, 155, 5, 2, 20, 30, 45],
+    data: [object[0], 155, 5, 2, 20, 30, 45],
   }]
 };
 const config = {
