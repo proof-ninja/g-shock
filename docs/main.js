@@ -17,7 +17,7 @@ fetch(endpoint)
       'May',
       'June',
     ];
-    const data = {
+    const data1 = {
       labels: labels,
       datasets: [{
         label: 'VIX Chart',
@@ -28,7 +28,7 @@ fetch(endpoint)
     };
     const config = {
       type: 'line',
-      data: data,
+      data: data1,
       options: {}
     };
     const myChart = new Chart(
