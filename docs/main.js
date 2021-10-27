@@ -23,7 +23,7 @@ fetch(endpoint)
         label: 'VIX Chart',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
-        data: [object.date[0], 155, 5, 2, 20, 30, 45],
+        data: [object.date[1], 155, 5, 2, 20, 30, 45],
       }]
     };
     const config = {
