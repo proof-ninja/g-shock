@@ -10,7 +10,7 @@ fetch(endpoint)
     const object = data;
     console.log(object);
     const labels = [
-      'January',
+      '一月',
       'February',
       'March',
       'April',
