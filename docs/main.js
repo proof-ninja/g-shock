@@ -9,26 +9,30 @@ fetch(endpoint)
     //JSONから配列に変換
     const object = data;
     console.log(object);
-    const labels = [
-      '一月',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ];
-    const data1 = {
+    console.log(object[0].Date);
+    const labels = [];
+    for (let i = 0; i < object.length; i++) {
+      labels[i] = object[i].Date;
+    }
+    const data1 = [];
+    for (let i = 0; i < object.length; i++) {
+      data1[i] = object[i].Close;
+    }
+    console.log(labels);
+    console.log(data1);
+    const data2 = {
       labels: labels,
       datasets: [{
         label: 'VIX Chart',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
-        data: [0, 155, 5, 2, 20, 30, 45],
+        data: data1,
       }]
     };
+    console.log(data2);
     const config = {
       type: 'line',
-      data: data1,
+      data: data2,
       options: {}
     };
     const myChart = new Chart(
