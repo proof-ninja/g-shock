@@ -4,7 +4,6 @@ function fetchVix() {
 }
 
 function showGraph(label, element_id, data) {
-  .then(data => {
     //JSONから配列に変換
     const object = data;
     console.log(object);
@@ -34,14 +33,13 @@ function showGraph(label, element_id, data) {
       data: data2,
       options: {}
     };
-  const myChart = new Chart(
+    const myChart = new Chart(
     document.getElementById(element_id),
     config);
-  return;
-}
-
-window.addEventListener('load', (event) => {
+    
+  window.addEventListener('load', (event) => {
   fetchVix().then(data => {
     showGraph("VIX Chart", data);
   });
 });
+};
