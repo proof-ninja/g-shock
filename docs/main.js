@@ -36,6 +36,7 @@ function showGraph(label, element_id, data) {
     const myChart = new Chart(
     document.getElementById(element_id),
     config);
+    return;
 };
 window.addEventListener('load', (event) => {
   fetchVix().then(data => {
