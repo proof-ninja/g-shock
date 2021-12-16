@@ -1,6 +1,6 @@
 function fetchVix() {
-  const url = "https://script.google.com/macros/s/AKfycbxzldA3tsLwXsAKuZE7K7cypitVRP3j1-_quoNtw_7pkqkEy1dHRd7o3x8WiT0b3FLguQ/exec";
-  return fetch(url).then(response => response.json());
+  const url ="https://script.google.com/macros/s/AKfycbzUZAdeaXrxmJ-ziBIEFXHx8Nom0Sri3FjTCqqrRkbrkMJnAZdj0qgMSzWzHD8BH0mLVA/exec?ticker=VXN";
+  return fetch(url);
 }
 
 function showGraph(label, element_id, data) {
@@ -38,8 +38,11 @@ function showGraph(label, element_id, data) {
     config);
     return;
 };
+
 window.addEventListener('load', (event) => {
-  fetchVix().then(data => {
-    showGraph("VIX Chart", data);
-  });
+  fetchVix()
+      .then(response => response.json())
+      .then(data => {
+          showGraph("VIX Chart", "myChart", data);
+      });
 });
