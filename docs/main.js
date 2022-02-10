@@ -45,6 +45,9 @@ function fetchVXN() {
 }
 
 window.addEventListener('load', (event) => {
+  const spinner = document.getElementById('loading');
+  // Add .loaded to .loading
+  spinner.classList.add('loaded');
   fetchVix()
     .then(response => response.json())
     .then(data => {
@@ -56,9 +59,3 @@ window.addEventListener('load', (event) => {
       showGraph("VXN Chart", "myChart2", data);
     });
 });
-
-window.onload = function() {
-  const spinner = document.getElementById('loading');
-  // Add .loaded to .loading
-  spinner.classList.add('loaded');
-}
