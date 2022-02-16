@@ -3,7 +3,13 @@ function fetchVix() {
   return fetch(url);
 }
 
-function showGraph(label, element_id, data) {
+let timesSelect = document.getElementById('times');
+timesSelect.options[2].selected = true;
+
+let checkButton = document.getElementById('checkButton');
+checkButton.addEventListener('click', butotnClick);
+
+if(timesSelect == fulltime){function showGraph(label, element_id, data) {
   //JSONから配列に変換
   const object = data;
   console.log(object);
@@ -37,7 +43,8 @@ function showGraph(label, element_id, data) {
     document.getElementById(element_id),
     config);
   return;
-};
+};}
+
 
 function fetchVXN() {
   const url = "https://script.google.com/macros/s/AKfycbzUZAdeaXrxmJ-ziBIEFXHx8Nom0Sri3FjTCqqrRkbrkMJnAZdj0qgMSzWzHD8BH0mLVA/exec?ticker=VXN";
