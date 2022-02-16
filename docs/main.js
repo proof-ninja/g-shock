@@ -4,7 +4,7 @@ function fetchVix() {
 }
 
 function buttonClick(){
-  if(timesSelect.value == fiveyears){function showGraph(label, element_id, data) {
+  if(timesSelect.value == fultime){function showGraph(label, element_id, data) {
     //JSONから配列に変換
     const object = data;
     console.log(object);
