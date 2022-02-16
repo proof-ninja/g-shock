@@ -4,7 +4,7 @@ function fetchVix() {
 }
 
 function buttonClick(){
-  if(timesSelect == fiveyears){function showGraph(label, element_id, data) {
+  if(timesSelect.value == fiveyears){function showGraph(label, element_id, data) {
     //JSONから配列に変換
     const object = data;
     console.log(object);
@@ -42,7 +42,7 @@ function buttonClick(){
 }
 
 let timesSelect = document.getElementById('times');
-timesSelect.options[2].selected = true;
+timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
