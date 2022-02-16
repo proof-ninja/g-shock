@@ -7,7 +7,7 @@ let timesSelect = document.getElementById('times');
 timesSelect.options[2].selected = true;
 
 let checkButton = document.getElementById('checkButton');
-checkButton.addEventListener('click', butotnClick);
+checkButton.addEventListener('click', buttonClick);
 
 if(timesSelect == fiveyears){function showGraph(label, element_id, data) {
   //JSONから配列に変換
