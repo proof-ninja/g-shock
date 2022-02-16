@@ -1,8 +1,9 @@
-<label for="fruit">選択してください</label>
-<select id="fruit">
-<option value="orange">Orange</option>
-<option value="lemon">Lemon</option>
-<option value="strawberry">Strawberry</option>
+<label for="times">選択してください</label>
+<select id="times">
+<option value="full"> 全期間</option>
+<option value="5year">5年間</option>
+<option value="1year">1年間</option>
+</select>
 
 function fetchVix() {
   const url = "https://script.google.com/macros/s/AKfycbzUZAdeaXrxmJ-ziBIEFXHx8Nom0Sri3FjTCqqrRkbrkMJnAZdj0qgMSzWzHD8BH0mLVA/exec?ticker=VIX";
