@@ -3,7 +3,7 @@ function fetchVix() {
   return fetch(url);
 }
 
-function buttonClick(){
+function butotnClick(){
   if(timesSelect.value == fulltime){
     function showGraph(label, element_id, data) {
     //JSONから配列に変換
@@ -46,7 +46,7 @@ let timesSelect = document.getElementById('times');
 timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
-checkButton.addEventListener('click', buttonClick);
+checkButton.addEventListener('click', butotnClick);
 console.log(checkButton);
 console.log(timesSelect.value);
 
