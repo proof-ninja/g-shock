@@ -3,7 +3,7 @@ function fetchVix() {
   return fetch(url);
 }
 
-function butotnClick(){
+window.butotnClick = function butotnClick(){
   if(timesSelect.value == fulltime){
     function showGraph(label, element_id, data) {
     //JSONから配列に変換
