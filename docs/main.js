@@ -43,6 +43,7 @@ window.butotnClick = function butotnClick(){
 }
 
 let timesSelect = document.getElementById('times');
+console.log(timesSelect);
 timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
