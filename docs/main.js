@@ -3,8 +3,11 @@ function fetchVix() {
   return fetch(url);
 }
 
+console.log(timesSelect.value);
+
 function buttonClick(){
-  if(timesSelect.value == fulltime){function showGraph(label, element_id, data) {
+  if(timesSelect.value == fulltime){
+    function showGraph(label, element_id, data) {
     //JSONから配列に変換
     const object = data;
     console.log(object);
