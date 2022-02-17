@@ -47,7 +47,6 @@ timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
-console.log(checkButton);
 console.log(timesSelect.value);
 
 function fetchVXN() {
