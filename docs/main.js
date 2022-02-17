@@ -3,7 +3,7 @@ function fetchVix() {
   return fetch(url);
 }
 
-window.butotnClick = function butotnClick(){
+window.buttonClick = function buttonClick(){
   if(timesSelect.value == fulltime){
     function showGraph(label, element_id, data) {
     //JSONから配列に変換
@@ -43,11 +43,10 @@ window.butotnClick = function butotnClick(){
 }
 
 let timesSelect = document.getElementById('times');
-console.log(timesSelect);
 timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
-checkButton.addEventListener('click', butotnClick);
+checkButton.addEventListener('click', buttonClick);
 console.log(checkButton);
 console.log(timesSelect.value);
 
