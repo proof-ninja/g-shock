@@ -4,7 +4,7 @@ function fetchVix() {
 }
 
 window.buttonClick = function buttonClick(){
-  if(' + timesSelect.value + '  == fulltime){
+  if(timesSelect.value == 'fulltime'){
     function showGraph(label, element_id, data) {
     //JSONから配列に変換
     const object = data;
