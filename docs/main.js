@@ -6,6 +6,7 @@ function fetchVix() {
 function showGraph(label, element_id, data, length) {
   //JSONから配列に変換
   length = object.length
+  onsole.log(length);
   const object = data;
   console.log(object);
   console.log(object[0].Date);
