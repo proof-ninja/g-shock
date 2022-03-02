@@ -44,7 +44,7 @@ function buttonClick() {
     fetchVix()
         .then(response => response.json())
         .then(data => {
-          showGraph("VIX Chart", "myChart1", data,4221);
+          showGraph("VIX Chart", "myChart1", data,object.length-260);
         });
   }
 }
