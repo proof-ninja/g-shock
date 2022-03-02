@@ -3,17 +3,17 @@ function fetchVix() {
   return fetch(url);
 }
 
-function showGraph(label, element_id, data) {
+function showGraph(label, element_id, data,length1) {
   //JSONから配列に変換
   const object = data;
   console.log(object);
   console.log(object[0].Date);
   const labels = [];
-  for (let i = 0; i < object.length; i++) {
+  for (let i = length1; i < object.length; i++) {
     labels[i] = object[i].Date;
   }
   const data1 = [];
-  for (let i = 0; i < object.length; i++) {
+  for (let i = length1; i < object.length; i++) {
     data1[i] = object[i].Close;
   }
   console.log(labels);
@@ -44,7 +44,7 @@ function buttonClick() {
     fetchVix()
         .then(response => response.json())
         .then(data => {
-          showGraph("VIX Chart", "myChart1", data);
+          showGraph("VIX Chart", "myChart1", data, 100);
         });
   }
 }
