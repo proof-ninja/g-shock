@@ -10,11 +10,11 @@ function showGraph(label, element_id, data,length1) {
   console.log(object[0].Date);
   const labels = [];
   for (let i = length1; i < object.length; i++) {
-    labels[i] = object[i].Date;
+    labels[i+1-length1] = object[i].Date;
   }
   const data1 = [];
   for (let i = length1; i < object.length; i++) {
-    data1[i] = object[i].Close;
+    data1[i+1-length1] = object[i].Close;
   }
   console.log(labels);
   console.log(data1);
