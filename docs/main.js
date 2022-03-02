@@ -8,8 +8,7 @@ function showGraph(label, element_id, data, length1) {
   const object = data;
   console.log(object);
   console.log(object[0].Date);
-  length1 = object.length
-  console.log(length);
+  console.log(length1);
   const labels = [];
   for (let i = length1 - 52 ; i < length1 ; i++) {
     labels[i] = object[i].Date;
@@ -46,7 +45,7 @@ function buttonClick() {
     fetchVix()
         .then(response => response.json())
         .then(data => {
-          showGraph("VIX Chart", "myChart1", data, length1);
+          showGraph("VIX Chart", "myChart1", data, 100);
         });
   }
 }
