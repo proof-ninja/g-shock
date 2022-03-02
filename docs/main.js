@@ -3,19 +3,19 @@ function fetchVix() {
   return fetch(url);
 }
 
-function showGraph(label, element_id, data, length) {
+function showGraph(label, element_id, data, length1) {
   //JSONから配列に変換
   const object = data;
   console.log(object);
   console.log(object[0].Date);
-  length = object.length
+  length1 = object.length
   console.log(length);
   const labels = [];
-  for (let i = length - 52 ; i < length; i++) {
+  for (let i = 0; i < object.length; i++) {
     labels[i] = object[i].Date;
   }
   const data1 = [];
-  for (let i = length - 52; i < length; i++) {
+  for (let i = 0; i < object.length; i++) {
     data1[i] = object[i].Close;
   }
   console.log(labels);
