@@ -3,43 +3,51 @@ function fetchVix() {
   return fetch(url);
 }
 
-window.buttonClick = function buttonClick(){
-  if(timesSelect.value == 'fulltime'){
-    function showGraph(label, element_id, data) {
-    //JSONから配列に変換
-    const object = data;
-    console.log(object);
-    console.log(object[0].Date);
-    const labels = [];
-    for (let i = 0; i < object.length; i++) {
-      labels[i] = object[i].Date;
-    }
-    const data1 = [];
-    for (let i = 0; i < object.length; i++) {
-      data1[i] = object[i].Close;
-    }
-    console.log(labels);
-    console.log(data1);
-    const data2 = {
-      labels: labels,
-      datasets: [{
-        label: label,
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: data1,
-      }]
-    };
-    console.log(data2);
-    const config = {
-      type: 'line',
-      data: data2,
-      options: {}
-    };
-    const myChart1 = new Chart(
-      document.getElementById(element_id),
-      config);
-    return;
-  };}
+function showGraph(label, element_id, data, length) {
+  //JSONから配列に変換
+  length = object.length
+  const object = data;
+  console.log(object);
+  console.log(object[0].Date);
+  const labels = [];
+  for (let i = length - 52 ; i < length; i++) {
+    labels[i] = object[i].Date;
+  }
+  const data1 = [];
+  for (let i = 0; i < object.length; i++) {
+    data1[i] = object[i].Close;
+  }
+  console.log(labels);
+  console.log(data1);
+  const data2 = {
+    labels: labels,
+    datasets: [{
+      label: label,
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: data1,
+    }]
+  };
+  console.log(data2);
+  const config = {
+    type: 'line',
+    data: data2,
+    options: {}
+  };
+  const myChart1 = new Chart(
+    document.getElementById(element_id),
+    config);
+  return;
+};
+
+function buttonClick() {
+  if (timesSelect.value == 'fulltime') {
+    fetchVix()
+        .then(response => response.json())
+        .then(data => {
+          showGraph("VIX Chart", "myChart1", data, 1);
+        });
+  }
 }
 
 let timesSelect = document.getElementById('times');
@@ -54,18 +62,19 @@ function fetchVXN() {
   return fetch(url);
 }
 
-window.addEventListener('load', (event) => {
-  const spinner = document.getElementById('loading');
-  // Add .loaded to .loading
-  spinner.classList.add('loaded');
-  fetchVix()
-    .then(response => response.json())
-    .then(data => {
-      showGraph("VIX Chart", "myChart1", data);
-    });
-  fetchVXN()
-    .then(response => response.json())
-    .then(data => {
-      showGraph("VXN Chart", "myChart2", data);
-    });
-});
+
+// window.addEventListener('load', (event) => {
+//   const spinner = document.getElementById('loading');
+//   // Add .loaded to .loading
+//   spinner.classList.add('loaded');
+//   fetchVix()
+//     .then(response => response.json())
+//     .then(data => {
+//       showGraph("VIX Chart", "myChart1", data);
+//     });
+//   fetchVXN()
+//     .then(response => response.json())
+//     .then(data => {
+//       showGraph("VXN Chart", "myChart2", data);
+//     });
+// });
