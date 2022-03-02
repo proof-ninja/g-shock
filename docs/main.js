@@ -1,11 +1,11 @@
 function fetchVix() {
   const url = "https://script.google.com/macros/s/AKfycbzUZAdeaXrxmJ-ziBIEFXHx8Nom0Sri3FjTCqqrRkbrkMJnAZdj0qgMSzWzHD8BH0mLVA/exec?ticker=VIX";
-  const object = data;
   return fetch(url);
 }
 
 function showGraph(label, element_id, data,length1) {
   //JSONから配列に変換
+  const object = data;
   console.log(object);
   console.log(object[0].Date);
   const labels = [];
@@ -44,7 +44,7 @@ function buttonClick() {
     fetchVix()
         .then(response => response.json())
         .then(data => {
-          showGraph("VIX Chart", "myChart1", data,object.length-260);
+          showGraph("VIX Chart", "myChart1", data,100);
         });
   }
 }
