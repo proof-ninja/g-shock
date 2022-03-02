@@ -14,7 +14,7 @@ function showGraph(label, element_id, data, length) {
     labels[i] = object[i].Date;
   }
   const data1 = [];
-  for (let i = 0; i < object.length; i++) {
+  for (let i = length - 52; i < length; i++) {
     data1[i] = object[i].Close;
   }
   console.log(labels);
