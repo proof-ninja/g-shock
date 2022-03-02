@@ -10,11 +10,11 @@ function showGraph(label, element_id, data, length1) {
   console.log(object[0].Date);
   console.log(length1);
   const labels = [];
-  for (let i = length1 - 52 ; i < length1 ; i++) {
+  for (let i = length1 ; i < 100 ; i++) {
     labels[i] = object[i].Date;
   }
   const data1 = [];
-  for (let i = length1 - 52 ; i < length1 ; i++) {
+  for (let i = length1 ; i < 100 ; i++) {
     data1[i] = object[i].Close;
   }
   console.log(labels);
@@ -45,7 +45,7 @@ function buttonClick() {
     fetchVix()
         .then(response => response.json())
         .then(data => {
-          showGraph("VIX Chart", "myChart1", data, 100);
+          showGraph("VIX Chart", "myChart1", data, 1);
         });
   }
 }
