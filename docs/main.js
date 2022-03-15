@@ -11,11 +11,14 @@ function showGraph(label, element_id, data,length1) {
   const object1 = object.slice(-length1); 
   console.log(object1);
   console.log(object1[0].Date);
-  const labels = object1.Date;
+  const labels = [];
+  for (let i = 0; i < object1.length; i++) {
+    labels[i] = object1[i].Close;
+  }  
   console.log(labels);
   const data1 = [];
-  for (let i = length1; i < object.length; i++) {
-    data1[i+1-length1] = object[i].Close;
+  for (let i = 0; i < object1.length; i++) {
+    data1[i] = object1[i].Close;
   }
   console.log(data1);
   const data2 = {
