@@ -51,6 +51,14 @@ function buttonClick() {
           showGraph("VIX Chart", "myChart1", data,length1);
         });
   }
+  else if (timesSelect.value == 'fiveyears') {
+    length1 = 5*52*5 ;
+    fetchVix()
+        .then(response => response.json())
+        .then(data => {
+          showGraph("VIX Chart", "myChart1", data,length1);
+        });
+  }
 }
 
 let timesSelect = document.getElementById('times');
