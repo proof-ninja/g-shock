@@ -13,7 +13,7 @@ function showGraph(label, element_id, data,length1) {
   console.log(object1[0].Date);
   const labels = [];
   for (let i = 0; i < object1.length; i++) {
-    labels[i] = object1[i].Close;
+    labels[i] = object1[i].Date;
   }  
   console.log(labels);
   const data1 = [];
