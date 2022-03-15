@@ -10,6 +10,7 @@ function showGraph(label, element_id, data,length1) {
   console.log(object[0].Date);
   const object1 = object.slice(-length1); 
   console.log(object1);
+  console.log(object1.Date);
   const labels = object1.Date;
   console.log(labels);
   const data1 = [];
