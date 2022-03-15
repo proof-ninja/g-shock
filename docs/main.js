@@ -14,7 +14,6 @@ function showGraph(label, element_id, data,length1) {
   for (let i = length1; i < object.length; i++) {
     data1[i+1-length1] = object[i].Close;
   }
-  console.log(labels);
   console.log(data1);
   const data2 = {
     labels: labels,
