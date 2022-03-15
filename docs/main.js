@@ -8,7 +8,8 @@ function showGraph(label, element_id, data,length1) {
   const object = data;
   console.log(object);
   console.log(object[0].Date);
-  const labels = object.Date.slice(-length1);
+  const object1 = object.slice(-length1); 
+  const labels = object1.Date;
   console.log(labels);
   const data1 = [];
   for (let i = length1; i < object.length; i++) {
