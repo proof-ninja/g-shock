@@ -8,10 +8,8 @@ function showGraph(label, element_id, data,length1) {
   const object = data;
   console.log(object);
   console.log(object[0].Date);
-  const labels = [];
-  for (let i = length1; i < object.length; i++) {
-    labels[i+1-length1] = object[i].Date;
-  }
+  const labels = object.slice(-length1);
+  console.log(labels);
   const data1 = [];
   for (let i = length1; i < object.length; i++) {
     data1[i+1-length1] = object[i].Close;
@@ -40,11 +38,12 @@ function showGraph(label, element_id, data,length1) {
 };
 
 function buttonClick() {
-  if (timesSelect.value == 'fulltime') {
+  if (timesSelect.value == 'oneyear') {
+    length1 = 5*52 ;
     fetchVix()
         .then(response => response.json())
         .then(data => {
-          showGraph("VIX Chart", "myChart1", data,4221);
+          showGraph("VIX Chart", "myChart1", data,lemgth1);
         });
   }
 }
