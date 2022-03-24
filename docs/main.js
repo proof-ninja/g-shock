@@ -56,7 +56,7 @@ function buttonClick() {
   else if (timesSelect.value == 'fiveyears') {
     length1 = 5*days_per_week*Weeks_per_year ;
   }
-  else if (timesSelect.value == 'fiveyears') {
+  else if (timesSelect.value == 'fulltime') {
     length1 = 0 ;
   }
   fetchVix()
