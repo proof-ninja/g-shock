@@ -42,9 +42,11 @@ function showGraph(label, element_id, data,length1) {
   return;
 };
 
+days_per_week = 5;
+Weeks_per_year = 52;
 function buttonClick() {
   if (timesSelect.value == 'oneyear') {
-    length1 = 5*52 ;
+    length1 = days_per_week*Weeks_per_year ;
     fetchVix()
         .then(response => response.json())
         .then(data => {
@@ -52,7 +54,7 @@ function buttonClick() {
         });
   }
   else if (timesSelect.value == 'fiveyears') {
-    length1 = 5*52*5 ;
+    length1 = 5*days_per_week*Weeks_per_year ;
     fetchVix()
         .then(response => response.json())
         .then(data => {
