@@ -47,20 +47,15 @@ Weeks_per_year = 52;
 function buttonClick() {
   if (timesSelect.value == 'oneyear') {
     length1 = days_per_week*Weeks_per_year ;
-    fetchVix()
-        .then(response => response.json())
-        .then(data => {
-          showGraph("VIX Chart", "myChart1", data,length1);
-        });
   }
   else if (timesSelect.value == 'fiveyears') {
     length1 = 5*days_per_week*Weeks_per_year ;
-    fetchVix()
-        .then(response => response.json())
-        .then(data => {
-          showGraph("VIX Chart", "myChart1", data,length1);
-        });
   }
+  fetchVix()
+  .then(response => response.json())
+  .then(data => {
+    showGraph("VIX Chart", "myChart1", data,length1);
+      });
 }
 
 let timesSelect = document.getElementById('times');
