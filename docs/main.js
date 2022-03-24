@@ -8,6 +8,11 @@ function showGraph(label, element_id, data,length1) {
   const object = data;
   console.log(object);
   console.log(object[0].Date);
+  if(length1 == `0`){
+    length1 = object.length ;
+  } else {
+    length1 = length1 ;
+  }
   const object1 = object.slice(-length1); 
   console.log(object1);
   console.log(object1[0].Date);
@@ -50,6 +55,9 @@ function buttonClick() {
   }
   else if (timesSelect.value == 'fiveyears') {
     length1 = 5*days_per_week*Weeks_per_year ;
+  }
+  else if (timesSelect.value == 'fiveyears') {
+    length1 = 0 ;
   }
   fetchVix()
   .then(response => response.json())
