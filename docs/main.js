@@ -5,15 +5,15 @@ function fetchVix() {
 
 function showGraph(label, element_id, data,length) {
   //JSONから配列に変換
-  const object = data;
-  console.log(object);
-  console.log(object[0].Date);
+  const candle = data;
+  console.log(candle);
+  console.log(candle[0].Date);
   if(length == `0`){
-    length = object.length ;
+    length = candle.length ;
   } else {
     length = length ;
   }
-  const object1 = object.slice(-length); 
+  const object1 = candle.slice(-length); 
   console.log(object1);
   console.log(object1[0].Date);
   const labels = object1.map( (candle) => candle.Date);
