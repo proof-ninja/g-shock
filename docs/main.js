@@ -19,15 +19,15 @@ function showGraph(label, element_id, data,length) {
   const labels = object.map( (candle) => candle.Date);
   console.log(candle);
   console.log(labels);
-  const data1 = object.map( (candle) => candle.Close);
-  console.log(data1);
+  const Close = object.map( (candle) => candle.Close);
+  console.log(Close);
   const data2 = {
     labels: labels,
     datasets: [{
       label: label,
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: data1,
+      data: Close,
     }]
   };
   console.log(data2);
