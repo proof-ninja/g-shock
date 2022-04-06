@@ -13,16 +13,13 @@ function showGraph(label, element_id, data,length) {
   } else {
     length = length ;
   }
-  const object1 = candle.slice(-length); 
-  console.log(object1);
-  console.log(object1[0].Date);
-  const labels = object1.map( (candle) => candle.Date);
-  onsole.log(candle);
+  const object = candle.slice(-length); 
+  console.log(object);
+  console.log(object[0].Date);
+  const labels = object.map( (candle) => candle.Date);
+  console.log(candle);
   console.log(labels);
-  const data1 = [];
-  for (let i = 0; i < object1.length; i++) {
-    data1[i] = object1[i].Close;
-  }
+  const data1 = object.map( (candle) => candle.Close);
   console.log(data1);
   const data2 = {
     labels: labels,
