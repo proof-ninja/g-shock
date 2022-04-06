@@ -3,23 +3,20 @@ function fetchVix() {
   return fetch(url);
 }
 
-function showGraph(label, element_id, data,length1) {
+function showGraph(label, element_id, data,length) {
   //JSONから配列に変換
   const object = data;
   console.log(object);
   console.log(object[0].Date);
-  if(length1 == `0`){
-    length1 = object.length ;
+  if(length == `0`){
+    length = object.length ;
   } else {
-    length1 = length1 ;
+    length = length ;
   }
-  const object1 = object.slice(-length1); 
+  const object1 = object.slice(-length); 
   console.log(object1);
   console.log(object1[0].Date);
-  const labels = [];
-  for (let i = 0; i < object1.length; i++) {
-    labels[i] = object1[i].Date;
-  }  
+  const labels = object1.map( (candle) => candle.Date);
   console.log(labels);
   const data1 = [];
   for (let i = 0; i < object1.length; i++) {
@@ -51,18 +48,18 @@ days_per_week = 5;
 Weeks_per_year = 52;
 function buttonClick() {
   if (timesSelect.value == 'oneyear') {
-    length1 = days_per_week*Weeks_per_year ;
+    length = days_per_week*Weeks_per_year ;
   }
   else if (timesSelect.value == 'fiveyears') {
-    length1 = 5*days_per_week*Weeks_per_year ;
+    length = 5*days_per_week*Weeks_per_year ;
   }
   else if (timesSelect.value == 'fulltime') {
-    length1 = 0 ;
+    length = 0 ;
   }
   fetchVix()
   .then(response => response.json())
   .then(data => {
-    showGraph("VIX Chart", "myChart1", data,length1);
+    showGraph("VIX Chart", "myChart1", data,length);
       });
 }
 
