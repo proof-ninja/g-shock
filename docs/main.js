@@ -21,7 +21,7 @@ function showGraph(label, element_id, data,length) {
   console.log(labels);
   const Close = object.map( (candle) => candle.Close);
   console.log(Close);
-  const data2 = {
+  const Drawingdata = {
     labels: labels,
     datasets: [{
       label: label,
@@ -30,13 +30,13 @@ function showGraph(label, element_id, data,length) {
       data: Close,
     }]
   };
-  console.log(data2);
+  console.log(Drawingdata);
   const config = {
     type: 'line',
-    data: data2,
+    data: Drawingdata,
     options: {}
   };
-  const myChart1 = new Chart(
+  const mychart = new Chart(
     document.getElementById(element_id),
     config);
   return;
@@ -57,7 +57,7 @@ function buttonClick() {
   fetchVix()
   .then(response => response.json())
   .then(data => {
-    showGraph("VIX Chart", "myChart1", data,length);
+    showGraph("VIX Chart", "mychart", data,length);
       });
 }
 
@@ -81,7 +81,7 @@ function fetchVXN() {
 //   fetchVix()
 //     .then(response => response.json())
 //     .then(data => {
-//       showGraph("VIX Chart", "myChart1", data);
+//       showGraph("VIX Chart", "mychart", data);
 //     });
 //   fetchVXN()
 //     .then(response => response.json())
