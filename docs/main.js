@@ -3,15 +3,6 @@ function fetchVix() {
   return fetch(url);
 }
 
-var request = new XMLHttpRequest();
-request.open('GET', 'https://api.alternative.me/fng/', true);
-request.responseType = 'json';
-request.onload = function () {
-  var btcdata = this.response;
-  console.log(btcdata);
-};
-request.send();
-
 function showGraph(label, element_id, data, length) {
   //JSONから配列に変換
   const candle = data;
@@ -54,10 +45,10 @@ function showGraph(label, element_id, data, length) {
 days_per_week = 5;
 Weeks_per_year = 52;
 function buttonClick() {
-  if (timesSelect.value == 'oneyear') {
+  if (indexSelect.value == 'oneyear') {
     length = days_per_week * Weeks_per_year;
   }
-  else if (timesSelect.value == 'fiveyears') {
+  else if (indexSelect.value == 'fiveyears') {
     length = 5 * days_per_week * Weeks_per_year;
   }
   else if (timesSelect.value == 'fulltime') {
