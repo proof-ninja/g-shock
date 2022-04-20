@@ -45,13 +45,13 @@ function showGraph(label, element_id, data, length) {
 days_per_week = 5;
 Weeks_per_year = 52;
 function buttonClick() {
-  if (indexSelect.value == 'oneyear') {
+  if (categorySelect.value == 'oneyear') {
     length = days_per_week * Weeks_per_year;
   }
-  else if (indexSelect.value == 'fiveyears') {
+  else if (categorySelect.value == 'fiveyears') {
     length = 5 * days_per_week * Weeks_per_year;
   }
-  else if (timesSelect.value == 'fulltime') {
+  else if (categorySelect.value == 'fulltime') {
     length = 0;
   }
   fetchVix()
@@ -60,13 +60,64 @@ function buttonClick() {
       showGraph("VIX Chart", "myChart", data, length);
     });
 }
-
-let timesSelect = document.getElementById('times');
-timesSelect.options[0].selected = true;
+window.onload = function() {
+  times = document.getElementById("times");
+  // ジャンルの選択肢が変更された際の動作
+  category = document.getElementById("category");
+  category.onchange = changeCategory;
+}
+// ジャンルの選択肢が変更された際の動作
+function changeCategory() {
+  // 変更後のカテゴリを取得
+  var changedCategory = category.value;
+  if (changedCategory == "0") {
+    // カテゴリにVIXが選択された場合
+    setvix();
+  } else (changedCategory == "1") {
+    // カテゴリにBTCが選択された場合
+    setbtcFG();
+  } 
+}
+// vixの期間を設定する
+function setvix() {
+  // 期間の選択肢を空にする
+  times.textContent = null;
+  // 期間の選択肢
+  var vixtimes = [
+    {cd:"", label:"選択して下さい"},
+    {cd:"0", label:"全期間"},
+    {cd:"1", label:"5年間"},
+    {cd:"2", label:"1年間"}
+  ];
+  vixtimes.forEach(function(value) {
+    var op = document.createElement("option");
+    op.value = value.cd;
+    op.text = value.label;
+    times.appendChild(op);
+  });
+}
+// btcの期間を設定する
+function btcfgtimes() {
+  // 期間の選択肢を空にする
+  times.textContent = null;
+  // 期間の選択肢
+  var btctimes = [
+    {cd:"", label:"選択して下さい"},
+    {cd:"3", label:"今"},
+  ];
+  btctimes.forEach(function(value) {
+    var op = document.createElement("option");
+    op.value = value.cd;
+    op.text = value.label;
+    times.appendChild(op);
+  });
+}
+let ctegaorySelect = document.getElementById('category');
+ctegaorySelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
-console.log(timesSelect.value);
+console.log(ctegaorySelect);
 
 function fetchVXN() {
   const url = "https://script.google.com/macros/s/AKfycbzUZAdeaXrxmJ-ziBIEFXHx8Nom0Sri3FjTCqqrRkbrkMJnAZdj0qgMSzWzHD8BH0mLVA/exec?ticker=VXN";
