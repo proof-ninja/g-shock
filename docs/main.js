@@ -54,6 +54,9 @@ function buttonClick() {
   else if (timesSelect.value == '0') {
     length = 0;
   }
+  else if (timesSelect.value == '3') {
+    document.write(<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />);
+  }
   fetchVix()
     .then(response => response.json())
     .then(data => {
