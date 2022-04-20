@@ -3,23 +3,32 @@ function fetchVix() {
   return fetch(url);
 }
 
-function showGraph(label, element_id, data,length) {
+var request = new XMLHttpRequest();
+request.open('GET', 'https://api.alternative.me/fng/', true);
+request.responseType = 'json';
+request.onload = function () {
+  var btcdata = this.response;
+  console.log(btcdata);
+};
+request.send();
+
+function showGraph(label, element_id, data, length) {
   //JSONから配列に変換
   const candle = data;
   console.log(candle);
   console.log(candle[0].Date);
-  if(length == `0`){
-    length = candle.length ;
+  if (length == `0`) {
+    length = candle.length;
   } else {
-    length = length ;
+    length = length;
   }
-  const object = candle.slice(-length); 
-  console.log(object);
-  console.log(object[0].Date);
-  const labels = object.map( (candle) => candle.Date);
+  const CandleDuration = candle.slice(-length);
+  console.log(CandleDuration);
+  console.log(CandleDuration[0].Date);
+  const labels = CandleDuration.map((candle) => candle.Date);
   console.log(candle);
   console.log(labels);
-  const Close = object.map( (candle) => candle.Close);
+  const Close = CandleDuration.map((candle) => candle.Close);
   console.log(Close);
   const Drawingdata = {
     labels: labels,
@@ -36,7 +45,7 @@ function showGraph(label, element_id, data,length) {
     data: Drawingdata,
     options: {}
   };
-  const mychart = new Chart(
+  const myChart = new Chart(
     document.getElementById(element_id),
     config);
   return;
@@ -46,19 +55,19 @@ days_per_week = 5;
 Weeks_per_year = 52;
 function buttonClick() {
   if (timesSelect.value == 'oneyear') {
-    length = days_per_week*Weeks_per_year ;
+    length = days_per_week * Weeks_per_year;
   }
   else if (timesSelect.value == 'fiveyears') {
-    length = 5*days_per_week*Weeks_per_year ;
+    length = 5 * days_per_week * Weeks_per_year;
   }
   else if (timesSelect.value == 'fulltime') {
-    length = 0 ;
+    length = 0;
   }
   fetchVix()
-  .then(response => response.json())
-  .then(data => {
-    showGraph("VIX Chart", "mychart", data,length);
-      });
+    .then(response => response.json())
+    .then(data => {
+      showGraph("VIX Chart", "myChart", data, length);
+    });
 }
 
 let timesSelect = document.getElementById('times');
