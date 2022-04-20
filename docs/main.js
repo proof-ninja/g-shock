@@ -73,7 +73,7 @@ function changeCategory() {
   if (changedCategory == "0") {
     // カテゴリにVIXが選択された場合
     setvix();
-  } else (changedCategory == "1") {
+  } else {(changedCategory == "1") 
     // カテゴリにBTCが選択された場合
     setbtcFG();
   } 
@@ -97,7 +97,7 @@ function setvix() {
   });
 }
 // btcの期間を設定する
-function btcfgtimes() {
+function setbtcFG() {
   // 期間の選択肢を空にする
   times.textContent = null;
   // 期間の選択肢
