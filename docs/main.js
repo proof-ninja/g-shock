@@ -45,13 +45,13 @@ function showGraph(label, element_id, data, length) {
 days_per_week = 5;
 Weeks_per_year = 52;
 function buttonClick() {
-  if (categorySelect.value == 'oneyear') {
+  if (timesSelect.value == '2') {
     length = days_per_week * Weeks_per_year;
   }
-  else if (categorySelect.value == 'fiveyears') {
+  else if (timesSelect.value == '1') {
     length = 5 * days_per_week * Weeks_per_year;
   }
-  else if (categorySelect.value == 'fulltime') {
+  else if (timesSelect.value == '0') {
     length = 0;
   }
   fetchVix()
