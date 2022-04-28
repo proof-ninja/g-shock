@@ -56,9 +56,6 @@ function buttonClick() {
   else if (timesSelect.value == '3') {
     document.write('<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />');
   }
-  if (myChart) {
-    myChart.destroy();
-  }
   fetchVix()
     .then(response => response.json())
     .then(data => {
@@ -122,6 +119,11 @@ timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
+document.getElementById('checkButton').onclick = function() {
+  // すでにグラフ（インスタンス）が生成されている場合は、グラフを破棄する
+  if (myChart) {
+    myChart.destroy();
+  }
 console.log(timesSelect);
 
 function fetchVXN() {
