@@ -3,7 +3,6 @@ function fetchVix() {
   return fetch(url);
 }
 
-var click = 0;
 function showGraph(label, element_id, data, length) {
   //JSONから配列に変換
   const candle = data;
@@ -37,9 +36,6 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-  if (typeof myChart !== 'undefined' && myChart) {
-    myChart.destroy();
-  }
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
@@ -60,6 +56,9 @@ function buttonClick() {
   }
   else if (timesSelect.value == '3') {
     document.write('<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />');
+  }
+  if (typeof myChart !== 'undefined' && myChart) {
+    myChart.destroy();
   }
   fetchVix()
     .then(response => response.json())
