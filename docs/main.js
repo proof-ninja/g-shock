@@ -38,8 +38,9 @@ function showGraph(label, element_id, data, length) {
   };
   const chart = Chart.getChart("myChart");
   console.log(chart);
-  console.log(Chart);
-  chart.destroy();
+  if (chart.id == '0'){
+    myChart.destroy();
+  }
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
