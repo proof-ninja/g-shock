@@ -44,7 +44,7 @@ function showGraph(label, element_id, data, length) {
       config);
   }
   else if (chart.id == '0'){
-    myChart.destroy();
+    chart.destroy();
     const myChart = new Chart(
       document.getElementById(element_id),
       config);
