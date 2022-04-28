@@ -60,6 +60,9 @@ function buttonClick() {
   fetchVix()
     .then(response => response.json())
     .then(data => {
+      if (myChart) {
+        myChart.destroy();
+      }
       showGraph("VIX Chart", "myChart", data, length);
     });
 }
@@ -120,9 +123,6 @@ timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
-if (myChart) {
-  myChart.destroy();
-}
 console.log(timesSelect);
 
 function fetchVXN() {
