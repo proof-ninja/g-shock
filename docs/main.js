@@ -36,11 +36,10 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-  console.log(myChart);
-  if (myChart) {
-    myChart.destroy();
-  }
-  var myChart = new Chart(
+  const Chart = Chart.getChart("myChart");
+  console.log(Chart);
+  Chart.destroy();
+  const myChart = new Chart(
     document.getElementById(element_id),
     config);
   };
