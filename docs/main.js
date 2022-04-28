@@ -40,7 +40,9 @@ function showGraph(label, element_id, data, length) {
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
-  return;
+    return () => {
+      myChart.destroy()
+    }
 };
 
 days_per_week = 5;
