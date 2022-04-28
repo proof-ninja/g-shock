@@ -42,6 +42,10 @@ function showGraph(label, element_id, data, length) {
   return;
 };
 
+function destroyChart() {
+  myChart.destroy();
+}
+
 days_per_week = 5;
 Weeks_per_year = 52;
 function buttonClick() {
@@ -58,7 +62,7 @@ function buttonClick() {
     document.write('<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />');
   }
   if (typeof myChart !== 'undefined' && myChart) {
-    myChart.destroy();
+    destroyChart();
   }
   fetchVix()
     .then(response => response.json())
