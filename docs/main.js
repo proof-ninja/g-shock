@@ -42,8 +42,7 @@ function showGraph(label, element_id, data, length) {
     const myChart = new Chart(
       document.getElementById(element_id),
       config);
-  }
-  else if (chart.id == '0'){
+  } else {
     chart.destroy();
     const myChart = new Chart(
       document.getElementById(element_id),
@@ -64,7 +63,8 @@ function buttonClick() {
     length = 0;
   }
   else if (timesSelect.value == '3') {
-    document.write('<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />');
+    let checkButtonid = document.getElementById('checkButton');
+			checkButtonid.insertAdjacentHTML('afterend', '<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />');
   }
   fetchVix()
     .then(response => response.json())
