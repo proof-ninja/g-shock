@@ -63,8 +63,11 @@ function buttonClick() {
     length = 0;
   }
   else if (timesSelect.value == '3') {
-    let checkButtonid = document.getElementById('checkButton');
-			checkButtonid.insertAdjacentHTML('afterend', '<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />');
+    const image = document.createElement('img');
+    image.src = "https://alternative.me/crypto/fear-and-greed-index.png";
+    image.alt = "Latest Crypto Fear & Greed Index";
+    let gshockDisplay = document.getElementById('gshockDisplay');
+    gshockDisplay.appendChild(image);
   }
   fetchVix()
     .then(response => response.json())
