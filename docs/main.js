@@ -2,7 +2,7 @@ function fetchVix() {
   const url = "https://script.google.com/macros/s/AKfycbzUZAdeaXrxmJ-ziBIEFXHx8Nom0Sri3FjTCqqrRkbrkMJnAZdj0qgMSzWzHD8BH0mLVA/exec?ticker=VIX";
   return fetch(url);
 }
-
+var myChart = null;
 function showGraph(label, element_id, data, length) {
   //JSONから配列に変換
   const candle = data;
@@ -36,7 +36,7 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-
+  if(myChart != null) myChart.destroy();
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
