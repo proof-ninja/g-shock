@@ -57,12 +57,12 @@ function buttonClick() {
   else if (timesSelect.value == '3') {
     document.write('<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />');
   }
+  if (myChart) {
+    myChart.destroy();
+  }
   fetchVix()
     .then(response => response.json())
     .then(data => {
-      if (myChart) {
-        myChart.destroy();
-      }
       showGraph("VIX Chart", "myChart", data, length);
     });
 }
