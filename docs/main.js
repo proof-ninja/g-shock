@@ -120,6 +120,9 @@ timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
+if (myChart) {
+  myChart.destroy();
+}
 console.log(timesSelect);
 
 function fetchVXN() {
