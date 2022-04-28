@@ -36,9 +36,9 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-  const Chart = Chart.getChart("myChart");
-  console.log(Chart);
-  Chart.destroy();
+  const chart = Chart.getChart("myChart");
+  console.log(chart);
+  chart.destroy();
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
