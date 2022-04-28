@@ -124,6 +124,7 @@ document.getElementById('checkButton').onclick = function() {
   if (myChart) {
     myChart.destroy();
   }
+}
 console.log(timesSelect);
 
 function fetchVXN() {
