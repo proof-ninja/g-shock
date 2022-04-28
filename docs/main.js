@@ -4,6 +4,7 @@ function fetchVix() {
 }
 
 function showGraph(label, element_id, data, length) {
+  var myChart = [];
   //JSONから配列に変換
   const candle = data;
   console.log(candle);
