@@ -38,12 +38,17 @@ function showGraph(label, element_id, data, length) {
   };
   const chart = Chart.getChart("myChart");
   console.log(chart);
-  if (chart.id == '0'){
-    myChart.destroy();
+  if (typeof chart == "undefined"){
+    const myChart = new Chart(
+      document.getElementById(element_id),
+      config);
   }
-  const myChart = new Chart(
-    document.getElementById(element_id),
-    config);
+  else if (chart.id == '0'){
+    myChart.destroy();
+    const myChart = new Chart(
+      document.getElementById(element_id),
+      config);
+  }
   };
 
 days_per_week = 5;
