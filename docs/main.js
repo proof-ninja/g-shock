@@ -37,6 +37,9 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
+  if (typeof myChart !== 'undefined' && myChart) {
+    myChart.destroy();
+  }
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
