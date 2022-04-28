@@ -4,6 +4,7 @@ function fetchVix() {
 }
 
 function showGraph(label, element_id, data, length) {
+  var myChart;
   //JSONから配列に変換
   const candle = data;
   console.log(candle);
@@ -36,10 +37,10 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-  const myChart = new Chart(
+  myChart = new Chart(
     document.getElementById(element_id),
     config);
-};
+  };
 
 days_per_week = 5;
 Weeks_per_year = 52;
@@ -119,7 +120,7 @@ timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
-document.getElementById('checkButton').onclick = function() {
+checkButton.onclick = function() {
   // すでにグラフ（インスタンス）が生成されている場合は、グラフを破棄する
   if (myChart) {
     myChart.destroy();
