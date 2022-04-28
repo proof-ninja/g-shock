@@ -36,13 +36,12 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-  
+  if(myChart){
+    myChart.destroy();
+    }
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
-    return () => {
-      myChart.destroy()
-    }
 };
 
 days_per_week = 5;
