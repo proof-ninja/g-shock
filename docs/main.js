@@ -36,6 +36,7 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
+  var myChart;
   if (myChart) {
       myChart.destroy();
     }
