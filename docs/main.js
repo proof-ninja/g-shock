@@ -5,7 +5,6 @@ function fetchVix() {
 
 var click = 0;
 function showGraph(label, element_id, data, length) {
-  click = click + 1;
   //JSONから配列に変換
   const candle = data;
   console.log(candle);
@@ -38,9 +37,6 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-  if(click > 1) {  // 追加
-    myChart.destroy(); // 追加
-  } 
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
