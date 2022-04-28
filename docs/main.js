@@ -37,6 +37,9 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
+  if (myChart) {
+    myChart.destroy();
+  }
   myChart = new Chart(
     document.getElementById(element_id),
     config);
@@ -120,12 +123,6 @@ timesSelect.options[0].selected = true;
 
 let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
-checkButton.onclick = function() {
-  // すでにグラフ（インスタンス）が生成されている場合は、グラフを破棄する
-  if (myChart) {
-    myChart.destroy();
-  }
-}
 console.log(timesSelect);
 
 function fetchVXN() {
