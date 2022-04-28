@@ -4,7 +4,6 @@ function fetchVix() {
 }
 
 function showGraph(label, element_id, data, length) {
-  var myChart;
   //JSONから配列に変換
   const candle = data;
   console.log(candle);
@@ -37,8 +36,10 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-  myChart.destroy();
-  myChart = new Chart(
+  if (typeof myChart !== 'undefined' && myChart) {
+    myChart.destroy();
+  }
+  var myChart = new Chart(
     document.getElementById(element_id),
     config);
   };
