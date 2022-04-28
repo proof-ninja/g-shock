@@ -36,6 +36,9 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
+  if (myChart) {
+      myChart.destroy();
+    }
   const myChart = new Chart(
     document.getElementById(element_id),
     config);
@@ -56,9 +59,6 @@ function buttonClick() {
   }
   else if (timesSelect.value == '3') {
     document.write('<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />');
-  }
-  if (myChart) {
-    myChart.destroy();
   }
   fetchVix()
     .then(response => response.json())
