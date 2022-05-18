@@ -44,6 +44,7 @@ function showGraph(label, element_id, data, length) {
       config);
   } else {
     chart.destroy();
+    gshockDisplay.clearDisplay();
     const myChart = new Chart(
       document.getElementById(element_id),
       config);
