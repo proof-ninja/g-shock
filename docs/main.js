@@ -67,6 +67,9 @@ function buttonClick() {
     image.src = "https://alternative.me/crypto/fear-and-greed-index.png";
     image.alt = "Latest Crypto Fear & Greed Index";
     let gshockDisplay = document.getElementById('gshockDisplay');
+    while(gshockDisplay.firstChild){
+      gshockDisplay.removeChild(gshockDisplay.firstChild);
+    }
     gshockDisplay.appendChild(image);
   }
   fetchVix()
