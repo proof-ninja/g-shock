@@ -45,9 +45,6 @@ function showGraph(label, element_id, data, length) {
   } else {
     chart.destroy();
     let gshockDisplay = document.getElementById('gshockDisplay');
-    while(gshockDisplay.firstChild){
-      gshockDisplay.removeChild(gshockDisplay.firstChild);
-    }
     const myChart = new Chart(
       document.getElementById(element_id),
       config);
@@ -57,6 +54,9 @@ function showGraph(label, element_id, data, length) {
 days_per_week = 5;
 Weeks_per_year = 52;
 function buttonClick() {
+  while(gshockDisplay.firstChild){
+    gshockDisplay.removeChild(gshockDisplay.firstChild);
+  }
   if (timesSelect.value == '2') {
     length = days_per_week * Weeks_per_year;
   }
@@ -71,9 +71,6 @@ function buttonClick() {
     image.src = "https://alternative.me/crypto/fear-and-greed-index.png";
     image.alt = "Latest Crypto Fear & Greed Index";
     let gshockDisplay = document.getElementById('gshockDisplay');
-    while(gshockDisplay.firstChild){
-      gshockDisplay.removeChild(gshockDisplay.firstChild);
-    }
     gshockDisplay.appendChild(image);
   }
   fetchVix()
