@@ -36,7 +36,7 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
-  const chart = Chart.getChart("element_id");
+  const chart = Chart.getChart(element_id);
   console.log(chart);
   if (typeof chart == "undefined"){
     const myChart = new Chart(
