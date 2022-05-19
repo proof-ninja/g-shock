@@ -46,7 +46,7 @@ function showGraph(label, element_id, data, length) {
     chart.destroy();
     let gshockDisplay = document.getElementById('gshockDisplay');
     const myChart = new Chart(
-      document.getElementById(element_id),
+      document.getElementById(element_id).getContext('2d'),
       config);
   }
   };
