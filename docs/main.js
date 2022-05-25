@@ -49,10 +49,8 @@ function showGraph(label, element_id, data, length) {
       config);
   } else {
     chart.destroy();
-    let gshockDisplay = document.getElementById('gshockDisplay');
-    gshockDisplay.innerHTML = <canvas id="myChart"></canvas>;
     const myChart = new Chart(
-      document.getElementById(element_id).getContext('2d'),
+      document.getElementById(element_id),
       config);
   }
   };
