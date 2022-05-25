@@ -68,12 +68,27 @@ function buttonClick() {
   //canvasを追加
   if (timesSelect.value == '2') {
     length = days_per_week * Weeks_per_year;
+    fetchVix()
+    .then(response => response.json())
+    .then(data => {
+      showGraph("VIX Chart", "myChart", data, length);
+    });
   }
   else if (timesSelect.value == '1') {
     length = 5 * days_per_week * Weeks_per_year;
+    fetchVix()
+    .then(response => response.json())
+    .then(data => {
+      showGraph("VIX Chart", "myChart", data, length);
+    });
   }
   else if (timesSelect.value == '0') {
     length = 0;
+    fetchVix()
+    .then(response => response.json())
+    .then(data => {
+      showGraph("VIX Chart", "myChart", data, length);
+    });
   }
   else if (timesSelect.value == '3') {
     const image = document.createElement('img');
@@ -82,11 +97,6 @@ function buttonClick() {
     let gshockDisplay = document.getElementById('gshockDisplay');
     gshockDisplay.appendChild(image);
   }
-  fetchVix()
-    .then(response => response.json())
-    .then(data => {
-      showGraph("VIX Chart", "myChart", data, length);
-    });
 }
 window.onload = function() {
   times = document.getElementById("times");
