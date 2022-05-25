@@ -40,6 +40,7 @@ function showGraph(label, element_id, data, length) {
   console.log(chart);
   if (typeof chart == "undefined"){
     let gshockDisplay = document.getElementById('gshockDisplay');
+    console.log(gshockDisplay);
     gshockDisplay.appendChild('<canvas id="myChart"></canvas>');
     const myChart = new Chart(
       document.getElementById(element_id),
