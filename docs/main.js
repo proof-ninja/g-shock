@@ -40,14 +40,14 @@ function showGraph(label, element_id, data, length) {
   console.log(chart);
   if (typeof chart == "undefined"){
     let gshockDisplay = document.getElementById('gshockDisplay');
-    gshockDisplay.appendChild('<canvas id=",myChart,"></canvas>');
+    gshockDisplay.appendChild('<canvas id="myChart"></canvas>');
     const myChart = new Chart(
       document.getElementById(element_id),
       config);
   } else {
     chart.destroy();
     let gshockDisplay = document.getElementById('gshockDisplay');
-    gshockDisplay.appendChild('<canvas id=",myChart,"></canvas>');
+    gshockDisplay.appendChild('<canvas id="myChart"></canvas>');
     const myChart = new Chart(
       document.getElementById(element_id).getContext('2d'),
       config);
