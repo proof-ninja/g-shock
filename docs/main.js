@@ -37,10 +37,10 @@ function showGraph(label, element_id, data, length) {
     options: {}
   };
   let gshockDisplay = document.getElementById("gshockDisplay");
-    var newElement = document.createElement("canvas"); // canvas要素作成
-    newElement.setAttribute("id","myChart"); // p要素にidを設定
-    console.log(gshockDisplay);
-    gshockDisplay.insertBefore(newElement, gshockDisplay.firstChild);
+  var newElement = document.createElement("canvas"); // canvas要素作成
+  newElement.setAttribute("id","myChart"); // p要素にidを設定
+  console.log(gshockDisplay);
+  gshockDisplay.insertBefore(newElement, gshockDisplay.firstChild);
   const chart = Chart.getChart("myChart");
   console.log(chart);
   if (typeof chart == "undefined"){
@@ -64,7 +64,7 @@ function clearDisplay(){
 days_per_week = 5;
 Weeks_per_year = 52;
 function buttonClick() {
-  clearDisplay();
+  clearDisplay()
   //canvasを追加
   if (timesSelect.value == '2') {
     length = days_per_week * Weeks_per_year;
