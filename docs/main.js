@@ -56,6 +56,7 @@ function clearDisplay(){
   while(gshockDisplay.firstChild){
     gshockDisplay.removeChild(gshockDisplay.firstChild);
 }
+}
 
 days_per_week = 5;
 Weeks_per_year = 52;
@@ -147,20 +148,3 @@ function fetchVXN() {
   const url = "https://script.google.com/macros/s/AKfycbzUZAdeaXrxmJ-ziBIEFXHx8Nom0Sri3FjTCqqrRkbrkMJnAZdj0qgMSzWzHD8BH0mLVA/exec?ticker=VXN";
   return fetch(url);
 }
-
-
-// window.addEventListener('load', (event) => {
-//   const spinner = document.getElementById('loading');
-//   // Add .loaded to .loading
-//   spinner.classList.add('loaded');
-//   fetchVix()
-//     .then(response => response.json())
-//     .then(data => {
-//       showGraph("VIX Chart", "mychart", data);
-//     });
-//   fetchVXN()
-//     .then(response => response.json())
-//     .then(data => {
-//       showGraph("VXN Chart", "myChart2", data);
-//     });
-// });
