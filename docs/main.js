@@ -36,12 +36,14 @@ function showGraph(label, element_id, data, length) {
     data: Drawingdata,
     options: {}
   };
+  let gshockDisplay = document.getElementById("gshockDisplay");
+    var newElement = document.createElement("canvas"); // canvas要素作成
+    newElement.setAttribute("id","myChart"); // p要素にidを設定
+    console.log(gshockDisplay);
+    gshockDisplay.insertBefore(newElement, gshockDisplay.firstChild);
   const chart = Chart.getChart("myChart");
   console.log(chart);
   if (typeof chart == "undefined"){
-    let gshockDisplay = document.getElementById('gshockDisplay');
-    console.log(gshockDisplay);
-    gshockDisplay.innerHTML = <canvas id="myChart"></canvas>;
     const myChart = new Chart(
       document.getElementById(element_id),
       config);
